@@ -5,30 +5,38 @@ phone_nums = {
     "Francine": "510-444-0008",
     "Farah": "+52-455-34590"
 }
+contact = False
 
 def phone_num(num_query):
     if num_query in phone_nums:
         print(phone_nums[num_query])
+        global contact
+        contact = True
     else:
+        contact = False
         print(f"You don't have {num_query}'s number.")
 
 num_query = input("Give me a first name and I'll give you their number: ")
 
 phone_num(num_query)
 
+def update_num(change_query):
+    phone_nums[num_query] = change_query    
 
+if contact == True:
+    yn = input("Would you like to update their phone number? yes/no? ")
+else:
+    yn = "no"
 
+if yn == "yes":
+    change_query = input("What is their new number? ")
+    update_num(change_query)
+else:
+    if contact == True:
+        print("Ok, let's keep the current number.")
 
-# turned these two if statements into the phone_num function above:
+# these are just to test the updates
+# print(phone_nums[num_query])
 
-# if "Kairah" in phone_nums:
-#     print(phone_nums["Kairah"])
+# print(phone_nums)
 
-# else:
-#     print("You don't have Kairah's number.")
-
-# if "Jenny" in phone_nums:
-#     print(phone_nums["Jenny"])
-    
-# else:
-#     print("You don't have Jenny's number.")
