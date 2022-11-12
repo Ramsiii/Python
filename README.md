@@ -1,2 +1,2 @@
-# food
-Lunch menus and such
+# Python Practice
+Lunch menus, phone number requests, etc.
